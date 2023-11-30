@@ -105,9 +105,21 @@ function renderTodoList() {
     //the inner HTML of the todo item element
     todoItem.innerHTML = `
       <span>${todo.text} ${todo.completed ? '(COMPLETED)' : ''}</span>
-      <button onclick="toggleComplete(${todo.id})" class="dBtn" >Done</button>
-      <button onclick="deleteTodo(${todo.id})" class="delBtn" >Delete</button>
+      <button class="dBtn" >Done</button>
+      <button class="delBtn" >Delete</button>
     `;
+
+    //event listener for button
+    const doneBtn = todoItem.querySelector('.dBtn');
+    doneBtn.addEventListener('click', function () {
+      toggleComplete(todo.id);
+    });
+
+    //event listener for button
+    const delBtn = todoItem.querySelector('.delBtn');
+    delBtn.addEventListener('click', function () {
+      deleteTodo (todo.id);
+    });
 
     //add the 'completed' class (GO TO CSS) to the todo item if it is completed
     if (todo.completed) {
