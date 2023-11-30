@@ -4,53 +4,127 @@
  * You can modify these styles but you don't have to
  */
 
-/*
- VARIABLES
-*/
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
-
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
-}
-
-/*
-  PAGE / BODY
-*/
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
-}
-
-main {
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
 /****** Screen reader text utility clsas *******/
 .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
-  margin: -1px;
+  margin: 1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+body {
+  background-image: url(./images/leone-venter-VieM9BdZKFo-unsplash.jpg);
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center; 
+  padding: 1rem;
+  background-color: #49121f; 
+  color: #fff;
+}
+h3 {
+  text-align: center;  
+  background-color: #49121f; 
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
+#todoApp {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  max-height: 600px;
+  background-image: url(./images/notepad.png);
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.15);
+  overflow-y: scroll; /*without this the entire site breaks after like 20 things are inputted? very strange couldnt figure out why.*/
+  margin-top: 100px;
+}
+
+#todoList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0px;
+}
+
+.todoItem {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  padding: 6px;
+  margin-top: 10px;
+}
+
+.completed {
+  color: #cccccc;
+}
+
+#todoInput {
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  line-height: 1px;
+  width:auto;
+  padding: 20px;
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  border: none;
+}
+#emptyState {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(173, 79, 104);
+  padding: 50px;
+  color: rgb(0, 0, 0);
+}
+.emSTimg {
+    align-self: center;
+    max-width: 20%;
+    height: auto;
+}
+
+.dBtn {
+  background-color: rgb(173, 79, 104);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-bottom: 7px;
+} .dBtn:hover {
+  background-color: #49121f;
+}
+.delBtn{
+  background-color: rgb(173, 79, 104);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: 0rem;
+  margin-left: 20px;
+  margin-bottom: 7px;
+} .delBtn:hover {
+  background-color: #49121f;
 }
